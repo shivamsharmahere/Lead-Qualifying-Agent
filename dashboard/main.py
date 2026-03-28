@@ -59,6 +59,7 @@ with tab_dash:
                 data.append({
                     "Session ID": l.session_id,
                     "Name": l.name,
+                    "Email": l.email,
                     "Budget": l.budget,
                     "Preference": l.preference,
                     "Timeline (Months)": l.timeline_months,
@@ -102,13 +103,17 @@ with tab_chat:
     if "chat_session_id" not in st.session_state:
         st.session_state.chat_session_id = None
     if "chat_messages" not in st.session_state:
-        st.session_state.chat_messages = []
+        st.session_state.chat_messages = [
+            {"role": "assistant", "content": "Hi there! I'm Alex, an AI property advisor. I help people find their dream homes to buy or rent. To get started, could you please tell me your name and email?"}
+        ]
 
     col_btn1, col_btn2 = st.columns([1, 8])
     with col_btn1:
         if st.button("🔄 New Chat"):
             st.session_state.chat_session_id = None
-            st.session_state.chat_messages = []
+            st.session_state.chat_messages = [
+                {"role": "assistant", "content": "Hi there! I'm Alex, an AI property advisor. I help people find their dream homes to buy or rent. To get started, could you please tell me your name and email?"}
+            ]
             st.rerun()
             
     st.caption(f"Current Session: `{st.session_state.chat_session_id or 'Will generate on first message'}`")

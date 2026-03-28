@@ -6,6 +6,7 @@ from app.models.lead import PriorityEnum
 
 class LeadBase(BaseModel):
     name: Optional[str] = None
+    email: Optional[str] = None
     budget: Optional[float] = None
     preference: Optional[str] = None
     timeline_months: Optional[int] = None

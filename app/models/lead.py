@@ -17,6 +17,7 @@ class Lead(Base):
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     session_id = Column(String(64), unique=True, nullable=False, index=True)
     name = Column(String(255), nullable=True)
+    email = Column(String(255), nullable=True)
     budget = Column(Float, nullable=True) # Storing as Float/NUMERIC in INR
     preference = Column(String, nullable=True)
     timeline_months = Column(Integer, nullable=True)

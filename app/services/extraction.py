@@ -10,6 +10,11 @@ def parse_regex_fallback(text: str) -> Dict[str, Any]:
     """Fallback parser if JSON extraction fails or is missing."""
     extracted = {}
     
+    # Email extraction
+    email_match = re.search(r'[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+', text)
+    if email_match:
+        extracted['email'] = email_match.group(0)
+
     # Simple regex for finding Indian Lakh/Crore budgets
     budget_match = re.search(r'(?:rs\.?|inr|budget)?\s*(\d+(?:\.\d+)?)\s*(lakhs?|l|cr|crores?)', text, re.IGNORECASE)
     if budget_match:
