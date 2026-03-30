@@ -176,9 +176,7 @@ curl -X POST "http://localhost:8000/webhook" \
   "session_id": "session_001",
   "reply": "Excellent choice! A 3BHK in Gurgaon is very doable with your budget. I can note these preferences for our agents.",
   "lead_extracted": true,
-  "lead_priority": "HIGH",
-  "tokens_used": 156,
-  "cached": false
+  "lead_priority": "HIGH"
 }
 ```
 
