@@ -1,8 +1,39 @@
-venv/
+# Environments
 .env
+.venv
+venv/
+ENV/
+
+# Byte-compiled / optimized / DLL files
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+
+# IDEs / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Testing / Coverage
 .pytest_cache/
 .coverage
 htmlcov/
-alembic.ini
+.tox/
+
+# Linters / Type Checkers
+.ruff_cache/
+.mypy_cache/
+
+# General caches
+.cache/
+
+# Databases
+*.sqlite3
+*.db
+
+# Streamlit Local Config (do NOT ignore the whole folder if you have custom themes)
+.streamlit/credentials.toml
+
+docs/
